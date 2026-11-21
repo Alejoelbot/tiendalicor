@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f7f4">
+  <meta name="description" content="Descubre vinos, destilados y licores seleccionados en Licores Store.">
+  <title>Licores Store — Una selección extraordinaria</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: "#171715",
+            paper: "#f8f7f4",
+            gold: "#b58b4c",
+            "gold-light": "#e9ddc9"
+          },
+          fontFamily: {
+            sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+            display: ["Georgia", "ui-serif", "serif"]
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: Inter, ui-sans-serif, system-ui, sans-serif; }
+    .bottle { position: relative; width: 43px; height: 106px; border-radius: 8px 8px 11px 11px; background: linear-gradient(90deg, #34291e 0%, #735938 23%, #a8844e 53%, #493824 100%); box-shadow: 12px 12px 24px #17171522, inset 3px 0 5px #fff3; }
+    .bottle::before { content: ""; position: absolute; width: 17px; height: 26px; top: -22px; left: 13px; border-radius: 4px 4px 0 0; background: linear-gradient(90deg, #3c3024, #947448, #3c3024); }
+    .bottle::after { content: ""; position: absolute; top: 43px; left: 3px; right: 3px; height: 35px; border: 1px solid #d6bd8b99; background: linear-gradient(135deg, #f8f3e8, #e1d3b7); }
+    .bottle-label { position: absolute; z-index: 1; top: 50px; left: 5px; width: 33px; color: #413522; font: 7px Georgia, serif; text-align: center; letter-spacing: .06em; }
+    .bottle.wine { width: 36px; height: 112px; border-radius: 7px 7px 12px 12px; background: linear-gradient(90deg, #281622, #652f43 45%, #351b29); }
+    .bottle.wine::before { width: 12px; left: 12px; }
+    .bottle.wine::after { top: 48px; }
+    .bottle.clear { background: linear-gradient(90deg, #b7a16d, #f0dfab 42%, #a78b54); }
+    .bottle.clear::before { background: linear-gradient(90deg, #a18b57, #dfc77f, #a18b57); }
+    .bottle.dark { background: linear-gradient(90deg, #182a24, #385b48 45%, #20372d); }
+    .bottle.dark::before { background: linear-gradient(90deg, #17271f, #4f7055, #17271f); }
+    .toast { animation: enter .2s ease-out; }
+    @keyframes enter { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; } }
+  </style>
+</head>
+<body class="bg-paper text-ink antialiased">
+  <div class="bg-ink px-4 py-2 text-center text-[10px] font-medium uppercase tracking-[.2em] text-white/75 sm:text-xs">
+    Selección de calidad · Compra responsable · Solo para mayores de 18 años
+  </div>
+  <header class="sticky top-0 z-30 border-b border-black/5 bg-paper/95 backdrop-blur">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
+      <a href="#catalogo" data-view-link="catalogo" class="flex items-center gap-3" aria-label="Licores Store, inicio">
+        <span class="grid h-10 w-10 place-items-center rounded-full border border-gold/60 text-gold" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" class="h-5 w-5"><path d="M9 3h6m-5 0v5l-4 5v6a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-6l-4-5V3m-7 11h12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <span><span class="block font-display text-lg leading-none">LICORES STORE</span><span class="mt-1 block text-[9px] uppercase tracking-[.24em] text-black/45">Selección especial</span></span>
+      </a>
+      <nav class="flex items-center gap-3 text-[10px] font-medium text-black/60 sm:gap-6 sm:text-xs" aria-label="Navegación principal">
+        <a class="whitespace-nowrap transition hover:text-gold" href="#catalogo" data-view-link="catalogo" aria-current="page">Catálogo</a>
+        <a class="whitespace-nowrap transition hover:text-gold" href="#inventario" data-view-link="inventario">Inventario</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section data-page-view="catalogo" class="relative overflow-hidden bg-[#efede7]">
+      <div class="absolute -right-20 -top-32 h-[28rem] w-[28rem] rounded-full border border-gold/20 sm:right-0 sm:top-[-18rem] sm:h-[54rem] sm:w-[54rem]"></div>
+      <div class="absolute right-8 top-12 h-56 w-56 rounded-full border border-gold/20 sm:right-36 sm:top-20 sm:h-80 sm:w-80"></div>
+      <div class="relative mx-auto grid max-w-7xl items-center gap-10 px-5 py-16 sm:py-24 lg:grid-cols-[1.05fr_.95fr] lg:px-8 lg:py-28">
+        <div class="max-w-xl">
+          <p class="mb-5 flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[.25em] text-gold"><span class="h-px w-8 bg-gold"></span>Para momentos memorables</p>
+          <h1 class="font-display text-5xl leading-[1.05] tracking-[-.04em] sm:text-6xl lg:text-7xl">El arte de<br><em class="font-normal text-gold">elegir bien.</em></h1>
+          <p class="mt-6 max-w-md text-sm leading-7 text-black/55">Vinos, destilados y grandes clásicos escogidos para disfrutar cada ocasión con algo especial.</p>
+          <div class="mt-8 flex flex-wrap items-center gap-4">
+            <a href="#catalogo" class="rounded-full bg-ink px-7 py-4 text-[10px] font-semibold uppercase tracking-[.17em] text-white transition hover:bg-gold">Ver catálogo <span class="ml-3" aria-hidden="true">↗</span></a>
+            <span class="text-xs text-black/45">Una buena elección cambia el momento.</span>
+          </div>
+        </div>
+        <div class="relative flex min-h-64 items-center justify-center sm:min-h-80">
+          <div class="absolute h-56 w-56 rounded-full bg-[#ded7c9] sm:h-72 sm:w-72"></div>
+          <div class="relative flex items-end gap-5 pb-2">
+            <div class="bottle wine scale-90"><span class="bottle-label">RESERVA<br>ESPECIAL</span></div>
+            <div class="bottle dark z-10 scale-110"><span class="bottle-label">LICORES<br>STORE</span></div>
+            <div class="bottle clear scale-95"><span class="bottle-label">EDICIÓN<br>SELECTA</span></div>
+          </div>
+          <div class="absolute bottom-1 right-0 rounded-full border border-black/10 bg-paper/75 px-4 py-2 text-[9px] uppercase tracking-[.18em] text-black/55 sm:bottom-4 sm:right-10">Curaduría con carácter</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="catalogo" data-page-view="catalogo" class="mx-auto max-w-7xl px-5 py-16 sm:py-20 lg:px-8">
+      <div class="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
+        <div>
+          <p class="mb-3 text-[10px] font-semibold uppercase tracking-[.25em] text-gold">Encuentra tu favorito</p>
+          <h2 class="font-display text-4xl tracking-[-.03em] sm:text-5xl">Nuestro catálogo</h2>
+        </div>
+        <p class="max-w-sm text-xs leading-6 text-black/50">Una selección para descubrir, compartir y brindar. Consulta precios y disponibilidad en tiempo real.</p>
+      </div>
+      <div class="mt-8 flex flex-col gap-3 border-y border-black/10 py-4 sm:flex-row sm:items-center sm:justify-between">
+        <div id="category-filters" class="flex flex-wrap gap-2" aria-label="Filtrar por categoría"></div>
+        <label class="relative block sm:w-64">
+          <span class="sr-only">Buscar productos</span>
+          <svg class="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-black/40" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.5"/><path d="m16 16 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <input id="search" type="search" placeholder="Buscar un licor..." class="w-full rounded-full border border-black/10 bg-transparent py-3 pl-10 pr-4 text-xs outline-none transition placeholder:text-black/35 focus:border-gold">
+        </label>
+      </div>
+      <p id="catalog-count" class="mt-5 text-[10px] uppercase tracking-[.15em] text-black/40" aria-live="polite"></p>
+      <div id="product-grid" class="mt-4 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"></div>
+    </section>
+
+    <section id="inventario" data-page-view="inventario" hidden class="bg-ink py-16 text-white sm:py-20">
+      <div class="mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-[.8fr_1.2fr] lg:px-8">
+        <div>
+          <p class="mb-3 text-[10px] font-semibold uppercase tracking-[.25em] text-[#c5a36d]">Gestión de productos</p>
+          <h2 class="font-display text-4xl tracking-[-.03em] sm:text-5xl">Tu inventario,<br><em class="font-normal text-[#c5a36d]">bajo control.</em></h2>
+          <p class="mt-5 max-w-sm text-sm leading-7 text-white/55">Agrega productos, actualiza precios y mantén el stock al día. Los cambios se guardan automáticamente en este dispositivo.</p>
+          <div class="mt-8 grid max-w-sm grid-cols-2 gap-x-3 gap-y-4 sm:grid-cols-4">
+            <div class="border-t border-white/20 pt-3"><strong id="metric-products" class="block font-display text-2xl">0</strong><span class="mt-1 block text-[9px] uppercase tracking-wider text-white/45">Productos</span></div>
+            <div class="border-t border-white/20 pt-3"><strong id="metric-stock" class="block font-display text-2xl">0</strong><span class="mt-1 block text-[9px] uppercase tracking-wider text-white/45">Unidades</span></div>
+            <div class="border-t border-white/20 pt-3"><strong id="metric-low" class="block font-display text-2xl">0</strong><span class="mt-1 block text-[9px] uppercase tracking-wider text-white/45">Stock bajo</span></div>
+            <div class="border-t border-[#c5a36d]/50 pt-3"><strong id="metric-value" class="block font-display text-lg text-[#d9bd8f]">$0.00</strong><span class="mt-1 block text-[9px] uppercase tracking-wider text-white/45">Valor inventario</span></div>
+          </div>
+          <p class="mt-3 max-w-sm text-[10px] leading-5 text-white/40">Valor calculado sumando las unidades de cada producto multiplicadas por su precio.</p>
+        </div>
+        <form id="product-form" class="rounded-2xl border border-white/10 bg-white/[.04] p-5 sm:p-8">
+          <div class="mb-6 flex items-start justify-between gap-4">
+            <div><h3 id="form-title" class="font-display text-2xl">Agregar producto</h3><p class="mt-1 text-[11px] text-white/45">Completa los datos del producto.</p></div>
+            <span class="rounded-full border border-[#c5a36d]/40 px-3 py-1 text-[9px] uppercase tracking-wider text-[#c5a36d]">Inventario</span>
+          </div>
+          <input id="product-id" type="hidden">
+          <div class="grid gap-4 sm:grid-cols-2">
+            <label class="sm:col-span-2"><span class="mb-2 block text-[10px] font-medium uppercase tracking-wider text-white/65">Nombre del producto</span><input id="product-name" required maxlength="70" placeholder="Ej. Whisky Reserva 12 años" class="w-full rounded-lg border border-white/15 bg-black/20 px-4 py-3 text-sm text-white outline-none placeholder:text-white/25 focus:border-[#c5a36d]"></label>
+            <label><span class="mb-2 block text-[10px] font-medium uppercase tracking-wider text-white/65">Categoría</span><select id="product-category" class="w-full rounded-lg border border-white/15 bg-[#22221f] px-4 py-3 text-sm text-white outline-none focus:border-[#c5a36d]"><option>Whisky</option><option>Vino</option><option>Ron</option><option>Tequila</option><option>Gin</option><option>Vodka</option><option>Otros</option></select></label>
+            <label><span class="mb-2 block text-[10px] font-medium uppercase tracking-wider text-white/65">Precio</span><div class="flex rounded-lg border border-white/15 bg-black/20 focus-within:border-[#c5a36d]"><span class="grid place-items-center pl-4 text-sm text-white/45">$</span><input id="product-price" type="number" min="0.01" step="0.01" required placeholder="0.00" class="w-full bg-transparent px-2 py-3 text-sm text-white outline-none"></div></label>
+            <label><span class="mb-2 block text-[10px] font-medium uppercase tracking-wider text-white/65">Stock disponible</span><input id="product-stock" type="number" min="0" step="1" required placeholder="0" class="w-full rounded-lg border border-white/15 bg-black/20 px-4 py-3 text-sm text-white outline-none placeholder:text-white/25 focus:border-[#c5a36d]"></label>
+            <label><span class="mb-2 block text-[10px] font-medium uppercase tracking-wider text-white/65">Presentación <span class="normal-case tracking-normal text-white/35">(opcional)</span></span><input id="product-size" maxlength="30" placeholder="Ej. 750 ml" class="w-full rounded-lg border border-white/15 bg-black/20 px-4 py-3 text-sm text-white outline-none placeholder:text-white/25 focus:border-[#c5a36d]"></label>
+          </div>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <button id="submit-button" type="submit" class="rounded-full bg-[#c5a36d] px-6 py-3 text-[10px] font-semibold uppercase tracking-[.15em] text-ink transition hover:bg-white">Guardar producto <span aria-hidden="true">↗</span></button>
+            <button id="cancel-edit" type="button" class="hidden rounded-full border border-white/20 px-6 py-3 text-[10px] font-semibold uppercase tracking-[.15em] text-white/70 transition hover:border-white hover:text-white">Cancelar</button>
+          </div>
+          <p id="form-message" class="mt-4 min-h-4 text-xs" role="status" aria-live="polite"></p>
+        </form>
+        <div class="lg:col-span-2">
+          <div class="mb-5 flex flex-wrap items-end justify-between gap-3">
+            <div>
+              <p class="mb-2 text-[10px] font-semibold uppercase tracking-[.22em] text-[#c5a36d]">Existencias</p>
+              <h3 class="font-display text-3xl">Listado de productos</h3>
+            </div>
+            <p id="inventory-count" class="text-[10px] uppercase tracking-[.14em] text-white/45" aria-live="polite"></p>
+          </div>
+          <div class="overflow-x-auto rounded-xl border border-white/10 bg-white/[.04]">
+            <table class="w-full min-w-[760px] text-left text-xs">
+              <thead class="border-b border-white/10 text-[9px] uppercase tracking-[.16em] text-white/45">
+                <tr>
+                  <th scope="col" class="px-5 py-4">Producto</th>
+                  <th scope="col" class="px-4 py-4">Categoría</th>
+                  <th scope="col" class="px-4 py-4">Precio</th>
+                  <th scope="col" class="px-4 py-4">Unidades</th>
+                  <th scope="col" class="px-4 py-4">Valor en stock</th>
+                  <th scope="col" class="px-5 py-4 text-right">Acciones</th>
+                </tr>
+              </thead>
+              <tbody id="inventory-table-body" class="divide-y divide-white/10"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="nosotros" data-page-view="catalogo" class="mx-auto max-w-7xl px-5 py-14 text-center lg:px-8">
+      <p class="font-display text-2xl italic text-gold">El buen gusto está en los detalles.</p>
+      <p class="mx-auto mt-3 max-w-lg text-xs leading-6 text-black/45">Disfruta con responsabilidad. Prohibida la venta de bebidas alcohólicas a menores de edad.</p>
+    </section>
+  </main>
+
+  <footer class="border-t border-black/10 px-5 py-6">
+    <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 text-[9px] uppercase tracking-[.16em] text-black/40 sm:flex-row lg:px-3">
+      <span>© <span id="year"></span> Licores Store</span><span>Solo mayores de 18 años · Disfruta responsablemente</span>
+      <a href="https://www.thecocktaildb.com/" target="_blank" rel="noopener noreferrer" class="transition hover:text-gold">Imágenes de ingredientes: TheCocktailDB</a>
+    </div>
+  </footer>
+  <div id="toast" class="toast fixed bottom-5 left-1/2 z-50 hidden -translate-x-1/2 rounded-full bg-ink px-5 py-3 text-xs text-white shadow-xl" role="status" aria-live="polite"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
